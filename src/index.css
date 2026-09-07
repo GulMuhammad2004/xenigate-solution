@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-canvas text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 { @apply font-display; }
+  ::selection { background: #DCE9FF; }
+  *:focus-visible {
+    outline: 2px solid #2E6FF2;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-white rounded-2xl shadow-panel border border-black/5;
+  }
+  .field {
+    @apply w-full rounded-lg border border-ash-400/30 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ash-500 outline-none transition focus:border-route-500 focus:ring-2 focus:ring-route-500/15;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-route-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-route-600 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink/[0.04] px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink/[0.08] active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-ash-600 transition hover:bg-ink/[0.05] hover:text-ink;
+  }
+}
+
+/* thin, quiet scrollbars */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #C7D2E0; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
