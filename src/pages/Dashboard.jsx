@@ -42,7 +42,7 @@ export default function Dashboard() {
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
         <div className="panel p-5 lg:col-span-2">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-[16px] font-semibold text-ink">Next up today</h2>
+            <h2 className="font-display text-[16px] font-semibold text-ink">Kylian Mbappe</h2>
             <Link to="/schedule" className="flex items-center gap-1 text-[12.5px] font-medium text-route-600 hover:text-route-700">
               Open schedule <ArrowUpRight size={13} />
             </Link>
