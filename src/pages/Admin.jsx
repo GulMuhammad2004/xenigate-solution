@@ -29,7 +29,7 @@ export default function Admin() {
         <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${SUPABASE_CONFIGURED ? 'bg-good/10 text-good' : 'bg-signal/15 text-signal'}`}>
           <Database size={19} />
         </span>
-        <div>
+        {/* <div>
           <p className="text-[13.5px] font-semibold text-ink">
             {SUPABASE_CONFIGURED ? 'Connected to Supabase' : 'Running in demo mode'}
           </p>
@@ -38,7 +38,7 @@ export default function Admin() {
               ? 'Reads and writes are going to your live Supabase project.'
               : 'Data lives in this browser only. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to .env to go live — see README.md.'}
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-5 grid grid-cols-3 gap-4">
@@ -60,7 +60,7 @@ export default function Admin() {
           <ShieldCheck size={17} className="text-route-600" />
           <h2 className="font-display text-[15px] font-semibold text-ink">Accounts</h2>
         </div>
-        {demoMode ? (
+        {demoMode  &&
           <>
             <p className="mb-4 text-[12.5px] text-ash-500">
               Demo accounts, seeded locally. Once Supabase is connected, invite real users from your Supabase dashboard —
@@ -81,11 +81,11 @@ export default function Admin() {
               ))}
             </div>
           </>
-        ) : (
-          <p className="text-[12.5px] text-ash-500">
-            Manage users and roles from the Supabase dashboard under Authentication and the <code>profiles</code> table.
-          </p>
-        )}
+        
+          // <p className="text-[12.5px] text-ash-500">
+          //   Manage users and roles from the Supabase dashboard under Authentication and the <code>profiles</code> table.
+          // </p>
+        }
       </div>
 
       {demoMode && (
